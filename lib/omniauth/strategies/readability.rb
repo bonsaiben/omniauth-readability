@@ -1,4 +1,5 @@
 require 'omniauth-oauth'
+require 'multi_json'
 
 module OmniAuth
   module Strategies
@@ -12,10 +13,26 @@ module OmniAuth
         :request_token_path => '/api/rest/v1/oauth/request_token'
       }
 
-      uid { raw_info['id'] }
+      uid { raw_info['username'] }
+
+      info do
+        {
+          :username           => raw_info['username'],
+          :first_name           => raw_info['first_name'],
+          :last_name           => raw_info['last_name']
+        }
+      end
+
+      extra do
+        {
+          'raw_info' => raw_info
+        }
+      end
 
       def raw_info
-        @data ||= access_token.params['user']
+        @raw_info ||= MultiJson.decode(access_token.get('/api/rest/v1/users/_current.json').body)
+      rescue ::Errno::ETIMEDOUT
+        raise ::Timeout::Error
       end
 
     end
