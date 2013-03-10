@@ -1,8 +1,8 @@
-require 'omniauth-oauth2'
+require 'omniauth-oauth'
 
 module OmniAuth
   module Strategies
-    class Readability < OmniAuth::Strategies::OAuth2
+    class Readability < OmniAuth::Strategies::OAuth
       option :name, 'readability'
       option :client_options, {
         :site => 'https://www.readability.com',
