@@ -4,10 +4,12 @@ module OmniAuth
   module Strategies
     class Readability < OmniAuth::Strategies::OAuth
       option :name, 'readability'
+
       option :client_options, {
         :site => 'https://www.readability.com',
-        :authorize_url => 'https://www.readability.com/api/rest/v1/oauth/authorize',
-        :token_url => 'https://www.readability.com/api/rest/v1/oauth/access_token'
+        :authorize_path => '/api/rest/v1/oauth/authorize',
+        :access_token_path => '/api/rest/v1/oauth/access_token',
+        :request_token_path => '/api/rest/v1/oauth/request_token'
       }
 
       uid { raw_info['id'] }
