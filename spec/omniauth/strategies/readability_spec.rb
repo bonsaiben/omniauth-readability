@@ -18,8 +18,12 @@ describe OmniAuth::Strategies::Readability do
       expect(subject.options.client_options.authorize_path).to eq('/api/rest/v1/oauth/authorize')
     end
 
-    it 'should have correct token url' do
+    it 'should have correct access token url' do
       expect(subject.options.client_options.access_token_path).to eq('/api/rest/v1/oauth/access_token')
+    end
+
+    it 'should have correct request token url' do
+      expect(subject.options.client_options.request_token_path).to eq('/api/rest/v1/oauth/request_token')
     end
   end
 end
