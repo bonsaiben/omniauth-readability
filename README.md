@@ -1,33 +1,7 @@
-[<img src="https://secure.travis-ci.org/bonsaiben/omniauth-readability.png">](http://travis-ci.org/bonsaiben/omniauth-readability)
 
 # OmniAuth Readability
 
 This gem contains the Readability Reader API strategy for OmniAuth.
-
-
-## Before You Begin
-
-You should have already installed OmniAuth into your app; if not, read the [OmniAuth README](https://github.com/intridea/omniauth) to get started.
-
-Now sign in into your [Readability account](http://www.readability.com) and grab your Reader API keys. Take note of your Reader API Key and Secret.
-
-## Using This Strategy
-
-Start by adding this gem to your Gemfile:
-
-    gem 'omniauth-readability'
-
-If you need to use the latest HEAD version, you can do so with:
-
-    gem 'omniauth-readability', :github => 'bonsaiben/omniauth-readability'
-
-Next, tell OmniAuth about this provider. For a Rails app, your `config/initializers/omniauth.rb` file should look like this:
-
-    Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :readability, "CONSUMER_KEY", "CONSUMER_SECRET"
-    end
-
-Replace CONSUMER_KEY and CONSUMER_SECRET with the appropriate values you obtained from your Readability account earlier.
 
 
 ## License
