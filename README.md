@@ -1,3 +1,5 @@
+[<img src="https://secure.travis-ci.org/bonsaiben/omniauth-readability.png">](http://travis-ci.org/bonsaiben/omniauth-readability)
+
 # OmniAuth Readability
 
 This gem contains the Readability Reader API strategy for OmniAuth.
@@ -11,7 +13,7 @@ Now sign in into your [Readability account](http://www.readability.com) and grab
 
 ## Using This Strategy
 
-First start by adding this gem to your Gemfile:
+Start by adding this gem to your Gemfile:
 
     gem 'omniauth-readability'
 
