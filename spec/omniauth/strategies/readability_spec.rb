@@ -15,11 +15,11 @@ describe OmniAuth::Strategies::Readability do
     end
 
     it 'should have correct authorize url' do
-      expect(subject.options.client_options.authorize_url).to eq('https://www.readability.com/api/rest/v1/oauth/authorize')
+      expect(subject.options.client_options.authorize_path).to eq('/api/rest/v1/oauth/authorize')
     end
 
     it 'should have correct token url' do
-      expect(subject.options.client_options.token_url).to eq('https://www.readability.com/api/rest/v1/oauth/access_token')
+      expect(subject.options.client_options.access_token_path).to eq('/api/rest/v1/oauth/access_token')
     end
   end
 end
